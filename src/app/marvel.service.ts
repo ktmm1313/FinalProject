@@ -20,17 +20,10 @@ export class MarvelService {
 
   getHeroes() {
     const requestUrl = 
-    this.url + "/characters/1009146" + "?apikey=" + this.apiKey;
-    this.http.get(this.url).subscribe( data => {
+    this.url + "/characters" + "?apikey=" + this.apiKey;
+    this.http.get(requestUrl).subscribe( data => {
       console.log(data);
-    }
-      );
+    });
   }
-
-
-  // getUrlWithAPIKey() {
-  //   return `${this.url}?apikey=${this.apiKey}`;
-  // }
-
 
 }
