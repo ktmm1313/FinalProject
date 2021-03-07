@@ -1,9 +1,12 @@
 {
   "name": "final-project",
   "version": "0.0.0",
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -20,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~11.0.5",
     "@angular/router": "~11.0.5",
     "express": "^4.17.1",
+    "pg": "^8.5.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -31,6 +35,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "dotenv": "^8.2.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.1.0",

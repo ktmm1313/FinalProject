@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 interface Hero {
   id: number;
   name: string;
-  description?: string;
+  description: string;
 }
 
 @Injectable({
