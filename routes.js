@@ -12,8 +12,5 @@ pool.query('SELECT * FROM characters WHERE name LIKE $1', [req.query.keyword]).t
 }
 });
 
-
-
-
 // export module so it's usable in other files
 module.exports = routes;
