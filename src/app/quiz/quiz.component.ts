@@ -13,7 +13,8 @@ export interface Question {
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
-  styleUrls: ['./quiz.component.css']
+  styleUrls: ['./quiz.component.css'],
+  providers: [MarvelService]
 })
 
 export class QuizComponent implements OnInit {
