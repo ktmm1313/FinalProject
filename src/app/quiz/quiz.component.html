@@ -1,10 +1,23 @@
 <header>
-<p>Who is your inner Super Hero?</p>
+<h1>Who's Your Inner Superhero?</h1>
 </header>
 
-<div class="question1">
+<section *ngFor="let question of questions;">
+        <div *ngIf="question.id == currentItem">
+    <h2>Question {{question.group}} of 6: {{question.text}}</h2>
+    </div>
+        <div *ngIf="question.group == currentGroup">
+    <form>
+    <label><input class="answers" name="answers" type="radio" [(ngModel)]="radioSelected" value="{{question.answer}}"/>{{question.answer}}</label>
+    </form>
+</div>
+</section>
+<button class="question_btn" (click) = "needFunctionToCaptureAnswers()">Next Question</button>  
+
+
+
+<!-- <div class="question1">
   <p>Question 1/6: Would you rather...</p>
-    
  <ul>
      <li>Help someone in need</li>
      <li>Depends on the day</li>
@@ -75,4 +88,4 @@
     <button (click) = "marvelService.getHeroes()"> Finish </button>
 </div>
 
-<button  (click) = "marvelService.getHeroes()"> Console Log List </button>
+<button  (click) = "marvelService.getHeroes()"> Console Log List </button> -->

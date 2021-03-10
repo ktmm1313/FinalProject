@@ -10,6 +10,5 @@ pool.query('SELECT * FROM test').then(results => {
     });
 });
 
-
 // export module so it's usable in other files
 module.exports = routes;
