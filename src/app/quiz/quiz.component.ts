@@ -1,6 +1,4 @@
-import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { type } from 'node:os';
 import { MarvelService } from '../marvel.service';
 
 export interface Question {
