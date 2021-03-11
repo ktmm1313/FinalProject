@@ -3,7 +3,7 @@
 </header>
 
 <section *ngFor="let question of questions;">
-        <div *ngIf="question.id == currentItem">
+        <div *ngIf="question.id == currentItem && currentGroup <= 6">
     <h2>Question {{question.group}} of 6: {{question.text}}</h2>
     </div>
         <div *ngIf="question.group == currentGroup">
@@ -13,7 +13,15 @@
     </form>
 </div>
 </section>
-<button class="question_btn" (click) = "gatherAnswers(answers)">Next</button>
+
+<div *ngIf="currentGroup <= 6; else elseBlock">
+<button class="question_btn" (click) = "gatherAnswers(answers)">Next Question</button>
+</div>
+<div>
+    <ng-template #elseBlock>
+<button class="question_btn" (click) = "gatherAnswers(answers)" routerLink="/results">I'm Ready for My Secret Identity</button>
+    </ng-template>
+</div>
 
 
 

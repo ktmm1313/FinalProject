@@ -29,7 +29,7 @@ export class QuizComponent implements OnInit {
     {id: "1a", group: "1", text: "I consider myself", answer: "A woman warrior", points: 1, gender: "female" },
     {id: "1b", group: "1", text: "I consider myself", answer: "Somewhere in between", points: 2, gender: "" },
     {id: "1c", group: "1", text: "I consider myself", answer: "A warrior", points: 3, gender: "male" },
-    {id: "2a", group: "2", text: "Would you rather...", answer: "Help someone in need", points: 1, gender: ""},
+    {id: "2a", group: "2", text: "Would you rather...", answer: "Help someone in need", points: 1, gender: "" },
     {id: "2b", group: "2", text: "Would you rather...", answer: "Depends on the day", points: 5, gender: "" },
     {id: "2c", group: "2", text: "Would you rather...", answer: "Rule the world at all costs", points: 10, gender: "" },
     {id: "3a", group: "3", text: "What's your go-to snack?", answer: "Candy bar", points: 5, gender: "" },
@@ -52,28 +52,28 @@ export class QuizComponent implements OnInit {
   answers: any;
   totalPoints: number;
   genderChoice: string;
-  questionBtn: QuestionBtn[] = [
-    {id: 1, text: "Next Question", route: "/"},
-    {id: 2, text: "Get Results", route: "/results"}
-  ];
 
   constructor(public marvelService: MarvelService) {}
   
   ngOnInit(): void {}
   
   gatherAnswers(answers: any) {
-      if (this.currentGroup <= 6) {
+      if (this.currentGroup < 6) {
       this.allAnswers.push(parseInt(answers));
       this.currentGroup += 1;
-      this.currentItem = this.currentGroup.toString() + 'a';  // Not sure why this is needed since I thought it would update automatically when the variable updated
+      this.currentItem = this.currentGroup.toString() + 'a';
       console.log(answers);
       console.log(this.allAnswers);
-      } else {
- 
+      } else if (this.currentGroup = 6) {
+      this.allAnswers.push(parseInt(answers));
+      this.currentGroup += 1;
       function add(sum, b) {
         return sum + b;
       };
       let totalPoints = this.allAnswers.reduce(add, 0);
+      console.log(this.allAnswers);
       console.log(totalPoints);
+      return totalPoints
     };
-  }};
+  }
+};
