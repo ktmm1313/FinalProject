@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 interface Hero {
   id: number;
   name: string;
-  description: string;
+  // thumbnail: string;
 }
 
 @Injectable({
@@ -14,9 +14,9 @@ interface Hero {
 export class MarvelService {
   apiKey = "d49166f47ed95b64b29bf9077ea82d9c";
   url = "https://gateway.marvel.com/v1/public";
-  heroes: Hero[]
+  heroes: Hero[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getHeroes() {
     const requestUrl = 
