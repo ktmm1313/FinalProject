@@ -46,8 +46,7 @@ export class QuizComponent implements OnInit {
 
   constructor(public marvelService: MarvelService) {}
   
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   
 
 }
