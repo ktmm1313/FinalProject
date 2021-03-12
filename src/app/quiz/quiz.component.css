@@ -5,7 +5,7 @@ h1 {
     height: auto;
 }
 
-H2 {
+h2 {
     color: rgb(0, 155, 182);
     font-size: 28px;
     font-weight: bolder;
@@ -41,22 +41,10 @@ background-color: rgb(165, 164, 164);
 }
 
 @media screen and (min-width: 768px) {
-    H2 {
-        color: rgb(33, 0, 182);
-        font-size: 28px;
-        font-weight: bolder;
-        text-align: left;
-        font-weight: lighter; 
-    }
+
    
 }
 
 @media screen and (min-width: 1024px) {
-    H2 {
-        color: rgb(0, 182, 70);
-        font-size: 28px;
-        font-weight: bolder;
-        text-align: left;
-        font-weight: lighter; 
-    }
+
 }
