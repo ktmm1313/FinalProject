@@ -18,9 +18,9 @@ export class MarvelService {
 
   constructor(private http: HttpClient) {}
 
-  getHeroes() {
+  getHeroes(id:number) {
     const requestUrl = 
-    this.url + "/characters" + "?apikey=" + this.apiKey;
+    this.url + "/characters/" + id + "?apikey=" + this.apiKey;
     this.http.get(requestUrl).subscribe( data => {
       console.log(data);
     });

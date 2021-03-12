@@ -40,10 +40,23 @@ button:hover {
 background-color: rgb(165, 164, 164);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
+    H2 {
+        color: rgb(33, 0, 182);
+        font-size: 28px;
+        font-weight: bolder;
+        text-align: left;
+        font-weight: lighter; 
+    }
    
 }
 
-@media screen and (max-width: 1024px) {
-   
+@media screen and (min-width: 1024px) {
+    H2 {
+        color: rgb(0, 182, 70);
+        font-size: 28px;
+        font-weight: bolder;
+        text-align: left;
+        font-weight: lighter; 
+    }
 }

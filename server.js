@@ -18,6 +18,10 @@ app.use(express.json());
 // require and use the cors module
 app.use(cors());
 
+// Add express static here in order to
+// run the angular app from folder called public
+app.use(express.static(__dirname + "/public"));
+
 // // adding output path
 // app.use(express.static(./ + "/public"));
 

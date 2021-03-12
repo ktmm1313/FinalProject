@@ -13,19 +13,20 @@ interface Hero {
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
+  public totalPoints: any;
+  id: number = 0;
   name: string;
   // thumbnail: string;
 
-selectHero() {
+selectedHero() {
   console.log(this.name);
 }
 
   constructor(public marvelService: MarvelService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.marvelService.heroes = [];
+  }
 
-  getResults(hero: Hero) {
-     console.log(hero.name)
-   }
 
 }

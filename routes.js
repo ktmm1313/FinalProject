@@ -1,4 +1,5 @@
 const express = require('express');
+const { getLineAndCharacterOfPosition } = require('typescript');
 const routes = express.Router();
 const pool = require('./connection');
 
@@ -20,10 +21,9 @@ const pool = require('./connection');
 //         console.log(results.rows);
 //     });
 // });
-let totalPoints = 6;
-routes.get('/', (req, res) => {
- pool.query('SELECT marvelid FROM characters results WHERE points = $1', [totalPoints]).then((results) => {     
 
+routes.get('/:points', (req, res) => {
+ pool.query('SELECT marvelid FROM characters results WHERE points = $1', [req.params.points]).then((results) => {             
         res.json(results.rows);
         console.log(results.rows);
     });
