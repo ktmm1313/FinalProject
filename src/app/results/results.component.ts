@@ -1,11 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MarvelService } from '../marvel.service';
-
-interface Hero {
-  id: number;
-  name: string;
-  // thumbnail: string;
-}
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-results',
@@ -13,20 +6,10 @@ interface Hero {
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  public totalPoints: any;
-  id: number = 0;
-  name: string;
-  // thumbnail: string;
+  @Input() hero: any;
 
-selectedHero() {
-  console.log(this.name);
-}
+  constructor() {}
 
-  constructor(public marvelService: MarvelService) {}
-
-  ngOnInit(): void {
-    this.marvelService.heroes = [];
-  }
-
+  ngOnInit() {}
 
 }

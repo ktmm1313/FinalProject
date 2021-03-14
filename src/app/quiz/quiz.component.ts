@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MarvelService } from '../marvel.service';
 
 export interface Question {
@@ -25,7 +25,7 @@ export interface QuestionBtn {
 })
 
 export class QuizComponent implements OnInit {
-
+  
   questions : Question[] = [
     {id: "1a", group: "1", text: "I consider myself", answer: "A woman warrior", points: 1, gender: "female" },
     {id: "1b", group: "1", text: "I consider myself", answer: "Somewhere in between", points: 2, gender: "" },
@@ -56,8 +56,8 @@ export class QuizComponent implements OnInit {
 
   constructor(public marvelService: MarvelService, public http:HttpClient) {}
   
-  ngOnInit(): void {}
-  
+
+ 
   gatherAnswers(answers: any) {
       if (this.currentGroup < 6) {
       this.allAnswers.push(parseInt(answers));
@@ -77,10 +77,13 @@ export class QuizComponent implements OnInit {
       this.http.get("http://localhost:3000/" + totalPoints).subscribe( response => {
        const id = response[0].marvelid;
        this.marvelService.getHeroes(id);
-        console.log(response);
-      })
+           console.log(response);
+      }) 
       return totalPoints;
     };
+  }
+
+  ngOnInit(): void {
   }
 };
 

@@ -29,10 +29,6 @@ app.use(express.static(__dirname + "/public"));
 app.listen(port, () => console.log(`Listening on port: ${port}.`));
 const routes = require('./routes.js');
 app.use('/', routes);
-
-// app.get("/test", (req, res) => {
-//     res.json("Woo hoo!");
-//   });
   
 app.get("/", (req, res) => {
     res.send("Welcome to our quiz");
