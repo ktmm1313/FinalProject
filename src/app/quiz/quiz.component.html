@@ -8,9 +8,18 @@
     </div>
         <div *ngIf="question.group == currentGroup">
     <form>
-    <label><input class="answers" name="answers" type="radio" [(ngModel)]="answers" value="{{question.points}}"/>{{question.answer}}</label> <!--Only pulling points for MVP-->
+    <!-- <label><input class="answers" name="answers" type="radio" [(ngModel)]="answers" value="{{question.points}}"/>{{question.answer}}</label> Only pulling points for MVP -->
     <!-- <label><input class="answers" name="answers" type="radio" [(ngModel)]="answers" value="{{question.gender}}, {{question.points}}"/>{{question.answer}}</label> -->
-    </form>
+    <div *ngIf="currentGroup == 1;else otherGroup">
+    <label><input class="answers" name="answers" type="radio" [(ngModel)]="answers" value="{{question.gender}}"/>{{question.answer}}</label>
+    </div>
+
+    <div>
+        <ng-template #otherGroup>
+    <label><input class="answers" name="answers" type="radio" [(ngModel)]="answers" value="{{question.points}}"/>{{question.answer}}</label>
+</ng-template>
+    </div>    
+</form>
 </div>
 </section>
 

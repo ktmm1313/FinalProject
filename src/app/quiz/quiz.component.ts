@@ -11,11 +11,11 @@ export interface Question {
   gender: string;
 }
 
-export interface QuestionBtn {
-  id: number;
-  text: string;
-  route: string;
-}
+// export interface QuestionBtn {
+//   id: number;
+//   text: string;
+//   route: string;
+// }
 
 @Component({
   selector: 'app-quiz',
@@ -51,40 +51,79 @@ export class QuizComponent implements OnInit {
   currentItem: string = this.currentGroup.toString() + 'a';
   allAnswers: any = [];
   answers: any;
+  numericalValues: any = [];
   totalPoints: number;
   genderChoice: string;
 
   constructor(public marvelService: MarvelService, public http:HttpClient) {}
   
+  ngOnInit(): void {}
+  
+  // gatherAnswers(answers: any) {
+  //     if (this.currentGroup < 6) {
+  //       this.allAnswers.push(parseInt(answers));
+  //       this.currentGroup += 1;
+  //       this.currentItem = this.currentGroup.toString() + 'a';
+  //         console.log(answers);
+  //         console.log(this.allAnswers);
+  //     } else if (this.currentGroup = 6) {
+  //       this.allAnswers.push(parseInt(answers));
+  //       this.currentGroup += 1;
+  //         function add(sum, b) {
+  //           return sum + b;
+  //     };
+  //       let totalPoints = this.allAnswers.reduce(add, 0);
+  //         console.log(this.allAnswers);
+  //         console.log(totalPoints);
+  //       this.http.get("http://localhost:3000/" + totalPoints).subscribe( response => {
+  //         const id = response[0].marvelid;
+  //         this.marvelService.getHeroes(id);
+  //           console.log(response);
+  //     })
+  //       return totalPoints;
+  //   };
+  // }
 
- 
+
   gatherAnswers(answers: any) {
-      if (this.currentGroup < 6) {
-      this.allAnswers.push(parseInt(answers));
+    if (this.currentGroup == 1) {
+      this.allAnswers.push(answers);
+      this.genderChoice = this.allAnswers[0];
       this.currentGroup += 1;
       this.currentItem = this.currentGroup.toString() + 'a';
-      console.log(answers);
-      console.log(this.allAnswers);
-      } else if (this.currentGroup = 6) {
+        console.log()
+        console.log('answers = ' + answers);
+        console.log('allanswers = ' + this.allAnswers);
+        console.log('genderchoice = ' + this.genderChoice);
+    } else if (this.currentGroup > 1 && this.currentGroup < 6) {
       this.allAnswers.push(parseInt(answers));
+      // this.genderChoice = this.allAnswers[0];
       this.currentGroup += 1;
-      function add(sum, b) {
-        return sum + b;
-      };
-      let totalPoints = this.allAnswers.reduce(add, 0);
-      console.log(this.allAnswers);
-      console.log(totalPoints);
-      this.http.get("http://localhost:3000/" + totalPoints).subscribe( response => {
-       const id = response[0].marvelid;
-       this.marvelService.getHeroes(id);
-           console.log(response);
-      }) 
-      return totalPoints;
+      this.currentItem = this.currentGroup.toString() + 'a';
+        console.log('answers = ' + answers);
+        console.log('allanswers = ' + this.allAnswers);
+    } else if (this.currentGroup == 6) {
+      this.allAnswers.push(parseInt(answers));
+      this.numericalValues = this.allAnswers.slice(1);
+      // this.genderChoice = answers[0];
+      this.currentGroup += 1;
+        function add(sum, b) {
+          return sum + b;
     };
-  }
+    console.log('numerical values =' + this.numericalValues);  
+    let totalPoints = this.numericalValues.reduce(add, 0);
+        console.log(this.numericalValues);
+        console.log(totalPoints);
 
-  ngOnInit(): void {
-  }
+      this.http.get("http://localhost:3000/" + totalPoints).subscribe( response => {
+        const id = response[0].marvelid;
+        this.marvelService.getHeroes(id);
+          console.log(response);
+    })
+      return totalPoints;
+  };
+}
+
 };
 
 
