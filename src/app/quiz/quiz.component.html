@@ -29,81 +29,10 @@
 <div>
     <ng-template #elseBlock>
 <button class="question_btn" (click) = "gatherAnswers(answers)" routerLink="/results">I'm Ready for My Secret Identity</button>
-    </ng-template>
+    </ng-template>    
+    <app-results *ngFor="let hero of marvelService.heroes" [hero]="hero" ></app-results>
 </div>
 
 
 
-<!-- <div class="question1">
-  <p>Question 1/6: Would you rather...</p>
- <ul>
-     <li>Help someone in need</li>
-     <li>Depends on the day</li>
-     <li>Rule the world at all costs</li>
- </ul>
 
- <button class="q1button" (click) = "marvelService.getHeroes()"> Next Question</button>
-</div>
-
-<div class="question2">
-<p>Question 2/6: How do you identify ~</p>
-<ul>
-    <li>Woman Warrior</li>
-    <li>Somewhere in between</li>
-    <li>Warrior</li>
-</ul>
-<button class="q2button" (click) = "marvelService.getHeroes()"> Next Question</button>
-</div>
-
-<div class="question3">
-<p>Question 3/6: What is your go to snack?</p>
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <button class="q3button" (click) = "marvelService.getHeroes()"> Next Question</button>
-</div>
-
-<div class="question4">
-<p>Question 4/6: Which color wheel describes your vibe?</p>
-    <ul>
-        <li>blue,green</li>
-        <li>red,yellow</li>
-        <li>black,purple</li>
-    </ul>
-    <button class="q4button" (click) = "marvelService.getHeroes()"> Next Question</button>
-</div>
-
-<div class="question5">
-<p>Question 5/6: How would you like to get places?</p>
-    
-    <ul>
-        <li>Drive, duh</li>
-        <li>Fly through the sky</li>        
-        <li>Teleport... of course</li>
-    </ul>
-    <button class="q5button" (click) = "marvelService.getHeroes()"> Next Question</button>
-</div>
-
-<div class="question6">
-<p>Question 6/6: </p>
-    
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <button class="q6button" (click) = "marvelService.getHeroes()"> Next Question</button>
-</div>
-
-<div class="finalPage">
-    <p>TESTING COMPLETED</p>
-
-    <p>Click FINISH to find out who your</p>
-    <p>Inner Super Hero is</p>
-
-    <button (click) = "marvelService.getHeroes()"> Finish </button>
-</div>
-
-<button  (click) = "marvelService.getHeroes()"> Console Log List </button> -->

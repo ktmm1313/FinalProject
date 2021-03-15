@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MarvelService } from '../marvel.service';
 
 export interface Question {
@@ -20,7 +20,7 @@ export interface Question {
 })
 
 export class QuizComponent implements OnInit {
-
+  
   questions : Question[] = [
     {id: "1a", group: "1", text: "I consider myself", answer: "A woman warrior", points: 1, gender: "female" },
     {id: "1b", group: "1", text: "I consider myself", answer: "Somewhere in between", points: 2, gender: "" },
