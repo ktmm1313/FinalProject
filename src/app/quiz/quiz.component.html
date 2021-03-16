@@ -30,7 +30,7 @@
     <ng-template #elseBlock>
 <button class="question_btn" (click) = "gatherAnswers(answers)" routerLink="/results">I'm Ready for My Secret Identity</button>
     </ng-template>    
-    <app-results *ngFor="let hero of marvelService.heroes" [hero]="hero" ></app-results>
+    <!-- <app-results [chosenHero]="marvelService" ></app-results> -->
 </div>
 
 

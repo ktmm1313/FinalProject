@@ -1,8 +1,9 @@
 <h2>You are....</h2>
-<div >
+<div *ngFor="let hero of getCharacter.chosenHero">
     <p>{{hero.id}}</p>
      <p>{{hero.name}}</p>
-     <a [href]="hero.image"></a>
+     <p>{{getCharacter.heroDescription}}</p>
+     <img [src]="hero.image" />
 </div>
 
 <!-- class="getCharacter" *ngFor="let hero of getCharacter.heroes; let i=index;" -->

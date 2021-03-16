@@ -16,7 +16,7 @@ export interface Question {
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css'],
-  providers: [MarvelService]
+  providers: []
 })
 
 export class QuizComponent implements OnInit {
@@ -108,7 +108,9 @@ export class QuizComponent implements OnInit {
         console.log(totalPoints);
 
       this.http.get("http://localhost:3000/" + totalPoints).subscribe( response => {
-        const id = response[0].marvelid;
+      const hero = response[0];  
+        const id = hero.marvelid;
+        this.marvelService.heroDescription = hero.description;
         this.marvelService.getHeroes(id);
           console.log(response);
     })
