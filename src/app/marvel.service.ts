@@ -27,16 +27,6 @@ export class MarvelService {
       console.log(response);
       this.chosenHero = response.data.results;
       console.log(this.chosenHero);
-             //  for (let hero of heroes) {
-        //   const superHero: Hero = {
-        //   id: hero.id,
-        //   name: hero.name,
-        //   image: hero.thumbnail.path + "/portrait_small" + ".jpg"
-        // };   console.log(hero.name, hero.id, hero.thumbnail.path);
-        // this.heroes.push(superHero);
-        // console.log(superHero);
-        
-      // } 
     }, (error) => {
       console.error(error);
     }

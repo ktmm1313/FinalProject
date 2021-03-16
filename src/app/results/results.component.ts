@@ -13,19 +13,10 @@ interface Hero {
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-
-
   constructor(public getCharacter: MarvelService) {}
 
   @Input() chosenHero: any;
 
-  testingHero() {
-    console.log(this.chosenHero);
-    console.log("testing");
-  }
-
-  ngOnInit(): void {
-    console.log(this.getCharacter.chosenHero);
-  }
+  ngOnInit(): void {}
 
 }
