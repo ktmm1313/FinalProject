@@ -15,6 +15,8 @@ export class MarvelService {
   apiKey = "d49166f47ed95b64b29bf9077ea82d9c";
   url = "https://gateway.marvel.com/v1/public";
   heroes: Hero[] = [];
+  public chosenHero: [] = [];
+  heroDescription: string;
 
   constructor(private http: HttpClient) {}
 
@@ -23,16 +25,18 @@ export class MarvelService {
     this.url + "/characters/" + id + "?apikey=" + this.apiKey;
     this.http.get(requestUrl).subscribe( (response: any) => {   
       console.log(response);
-      const heroes = response.data.results;
-         for (let hero of heroes) {
-          const superHero: Hero = {
-          id: hero.id,
-          name: hero.name,
-          image: hero.thumbnail.path + "/portrait_small" + ".jpg"
-        };   console.log(hero.name, hero.id, hero.thumbnail.path);
-        this.heroes.push(superHero);
-        console.log(superHero);
-      }
+      this.chosenHero = response.data.results;
+      console.log(this.chosenHero);
+             //  for (let hero of heroes) {
+        //   const superHero: Hero = {
+        //   id: hero.id,
+        //   name: hero.name,
+        //   image: hero.thumbnail.path + "/portrait_small" + ".jpg"
+        // };   console.log(hero.name, hero.id, hero.thumbnail.path);
+        // this.heroes.push(superHero);
+        // console.log(superHero);
+        
+      // } 
     }, (error) => {
       console.error(error);
     }
