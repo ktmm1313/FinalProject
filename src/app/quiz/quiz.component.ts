@@ -64,7 +64,7 @@ export class QuizComponent implements OnInit {
       this.genderChoice = this.allAnswers[0];
       this.currentGroup += 1;
       this.currentItem = this.currentGroup.toString() + 'a';
-      console.log(this.genderChoice);  // FOR TESTING - CAN BE REMOVED WHEN READY
+      console.log(this.genderChoice);  // FOR TESTING - CAN BE REMOVED
     
       } else if (this.currentGroup > 1 && this.currentGroup < 6) {
       this.allAnswers.push(parseInt(answers));
@@ -88,8 +88,8 @@ export class QuizComponent implements OnInit {
     
     let finalGender = this.genderChoice;
 
-        console.log(finalGender);  // FOR TESTING - CAN BE REMOVED WHEN READY
-        console.log(totalPoints);  // FOR TESTING - CAN BE REMOVED WHEN READY
+        console.log(finalGender);  // FOR TESTING - CAN BE REMOVED
+        console.log(totalPoints);  // FOR TESTING - CAN BE REMOVED
 
       this.http.get("http://localhost:3000/" + finalGender + "/" + totalPoints).subscribe( response => {
       const hero = response[0];  
