@@ -11,7 +11,6 @@ export interface Question {
   gender: string;
 }
 
-
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
@@ -23,7 +22,7 @@ export class QuizComponent implements OnInit {
   
   questions : Question[] = [
     {id: "1a", group: "1", text: "I consider myself", answer: "A woman warrior", points: 1, gender: "female" },
-    {id: "1b", group: "1", text: "I consider myself", answer: "Somewhere in between", points: 2, gender: "" },
+    {id: "1b", group: "1", text: "I consider myself", answer: "Somewhere in between", points: 2, gender: "random" },
     {id: "1c", group: "1", text: "I consider myself", answer: "A warrior", points: 3, gender: "male" },
     {id: "2a", group: "2", text: "Would you rather...", answer: "Help someone in need", points: 1, gender: "" },
     {id: "2b", group: "2", text: "Would you rather...", answer: "Depends on the day", points: 5, gender: "" },
@@ -49,52 +48,29 @@ export class QuizComponent implements OnInit {
   numericalValues: any = [];
   totalPoints: number;
   genderChoice: string;
+  genderOptions: string[] = [
+    "female",
+    "male"
+  ]
+  finalGender: string;
 
   constructor(public marvelService: MarvelService, public http:HttpClient) {}
   
   ngOnInit(): void {}
   
-  // gatherAnswers(answers: any) {
-  //     if (this.currentGroup < 6) {
-  //       this.allAnswers.push(parseInt(answers));
-  //       this.currentGroup += 1;
-  //       this.currentItem = this.currentGroup.toString() + 'a';
-  //         console.log(answers);
-  //         console.log(this.allAnswers);
-  //     } else if (this.currentGroup = 6) {
-  //       this.allAnswers.push(parseInt(answers));
-  //       this.currentGroup += 1;
-  //         function add(sum, b) {
-  //           return sum + b;
-  //     };
-  //       let totalPoints = this.allAnswers.reduce(add, 0);
-  //         console.log(this.allAnswers);
-  //         console.log(totalPoints);
-  //       this.http.get("http://localhost:3000/" + totalPoints).subscribe( response => {
-  //         const id = response[0].marvelid;
-  //         this.marvelService.getHeroes(id);
-  //           console.log(response);
-  //     })
-  //       return totalPoints;
-  //   };
-  // }
-
-
   gatherAnswers(answers: any) {
     if (this.currentGroup == 1) {
       this.allAnswers.push(answers);
       this.genderChoice = this.allAnswers[0];
       this.currentGroup += 1;
       this.currentItem = this.currentGroup.toString() + 'a';
-        console.log('answers = ' + answers);
-        console.log('allanswers = ' + this.allAnswers);
-        console.log('genderchoice = ' + this.genderChoice);
-    } else if (this.currentGroup > 1 && this.currentGroup < 6) {
+      console.log(this.genderChoice);  // FOR TESTING - CAN BE REMOVED
+    
+      } else if (this.currentGroup > 1 && this.currentGroup < 6) {
       this.allAnswers.push(parseInt(answers));
       this.currentGroup += 1;
       this.currentItem = this.currentGroup.toString() + 'a';
-        console.log('answers = ' + answers);
-        console.log('allanswers = ' + this.allAnswers);
+
     } else if (this.currentGroup == 6) {
       this.allAnswers.push(parseInt(answers));
       this.numericalValues = this.allAnswers.slice(1);
@@ -102,22 +78,25 @@ export class QuizComponent implements OnInit {
         function add(sum, b) {
           return sum + b;
     };
-    console.log('numerical values =' + this.numericalValues);  
-    let totalPoints = this.numericalValues.reduce(add, 0);
-        console.log(this.numericalValues);
-        console.log(totalPoints);
 
-      this.http.get("http://localhost:3000/" + totalPoints).subscribe( response => {
+    let totalPoints = this.numericalValues.reduce(add, 0);
+
+    if (this.genderChoice == "random") {
+      let randomNumber: number = Math.floor(Math.random() * 2);
+      this.genderChoice = this.genderOptions[randomNumber];
+    } 
+    
+    let finalGender = this.genderChoice;
+
+        console.log(finalGender);  // FOR TESTING - CAN BE REMOVED
+        console.log(totalPoints);  // FOR TESTING - CAN BE REMOVED
+
+      this.http.get("http://localhost:3000/" + finalGender + "/" + totalPoints).subscribe( response => {
       const hero = response[0];  
         const id = hero.marvelid;
         this.marvelService.heroDescription = hero.description;
         this.marvelService.getHeroes(id);
+
           console.log(response);
-    })
-      return totalPoints;
-  };
-}
-
-};
-
-
+    })};
+}};
