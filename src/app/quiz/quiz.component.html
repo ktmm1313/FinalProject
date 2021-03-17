@@ -1,0 +1,38 @@
+<header>
+<h1>Who's Your Inner Superhero?</h1>
+</header>
+
+<section *ngFor="let question of questions;">
+        <div *ngIf="question.id == currentItem && currentGroup <= 6">
+    <h2>Question {{question.group}} of 6: {{question.text}}</h2>
+    </div>
+        <div *ngIf="question.group == currentGroup">
+    <form>
+    <!-- <label><input class="answers" name="answers" type="radio" [(ngModel)]="answers" value="{{question.points}}"/>{{question.answer}}</label> Only pulling points for MVP -->
+    <!-- <label><input class="answers" name="answers" type="radio" [(ngModel)]="answers" value="{{question.gender}}, {{question.points}}"/>{{question.answer}}</label> -->
+    <div *ngIf="currentGroup == 1;else otherGroup">
+    <label><input class="answers" name="answers" type="radio" [(ngModel)]="answers" value="{{question.gender}}"/>{{question.answer}}</label>
+    </div>
+
+    <div>
+        <ng-template #otherGroup>
+    <label><input class="answers" name="answers" type="radio" [(ngModel)]="answers" value="{{question.points}}"/>{{question.answer}}</label>
+</ng-template>
+    </div>    
+</form>
+</div>
+</section>
+
+<div *ngIf="currentGroup < 6; else elseBlock">
+<button class="question_btn" (click) = "gatherAnswers(answers)">Next Question</button>
+</div>
+<div>
+    <ng-template #elseBlock>
+<button class="question_btn" (click) = "gatherAnswers(answers)" routerLink="/results">I'm Ready for My Secret Identity</button>
+    </ng-template>    
+    <!-- <app-results [chosenHero]="marvelService" ></app-results> -->
+</div>
+
+
+
+

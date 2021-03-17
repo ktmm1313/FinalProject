@@ -1,0 +1,6 @@
+<h2>You are....</h2>
+<div *ngFor="let hero of getCharacter.chosenHero">
+     <p>{{hero.name}}</p>
+     <p>{{getCharacter.heroDescription}}</p>
+     <img src="{{hero.thumbnail.path}}/portrait_incredible.{{hero.thumbnail.extension}}" />
+    </div>

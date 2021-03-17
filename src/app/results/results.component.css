@@ -1,0 +1,51 @@
+h1 {
+    text-align: center;
+    font-weight: lighter; 
+    width: auto;
+    height: auto;
+}
+
+h2 {
+    color: rgb(0, 155, 182);
+    font-size: 28px;
+    font-weight: bolder;
+    text-align: left;
+    font-weight: lighter; 
+}
+
+form {
+    color: rgb(0, 155, 182);
+    font-weight: lighter;
+    font-size: 20px;
+    padding: 20px 20px 20px 20px;
+}
+
+input {
+    cursor: pointer;
+}
+
+button {
+    padding: 5px 5px;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: rgb(41, 158, 179);
+    color: rgb(243, 245, 247);
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+background-color: rgb(165, 164, 164);
+}
+
+@media screen and (min-width: 768px) {
+
+   
+}
+
+@media screen and (min-width: 1024px) {
+
+   
+}
