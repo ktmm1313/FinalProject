@@ -53,50 +53,54 @@ export class QuizComponent implements OnInit {
     "male"
   ]
   finalGender: string;
+  altid: number;
 
   constructor(public marvelService: MarvelService, public http:HttpClient) {}
   
   ngOnInit(): void {}
   
-  gatherAnswers(answers: any) {
-    if (this.currentGroup == 1) {
-      this.allAnswers.push(answers);
-      this.genderChoice = this.allAnswers[0];
-      this.currentGroup += 1;
-      this.currentItem = this.currentGroup.toString() + 'a';
-      console.log(this.genderChoice);  // FOR TESTING - CAN BE REMOVED
-    
-      } else if (this.currentGroup > 1 && this.currentGroup < 6) {
-      this.allAnswers.push(parseInt(answers));
-      this.currentGroup += 1;
-      this.currentItem = this.currentGroup.toString() + 'a';
+gatherAnswers(answers: any) {
+  if (this.currentGroup == 1) {
+    this.allAnswers.push(answers);
+    this.genderChoice = this.allAnswers[0];
+    this.currentGroup += 1;
+    this.currentItem = this.currentGroup.toString() + 'a';
+    console.log(this.genderChoice);  // FOR TESTING - CAN BE REMOVED
+  
+    } else if (this.currentGroup > 1 && this.currentGroup < 6) {
+    this.allAnswers.push(parseInt(answers));
+    this.currentGroup += 1;
+    this.currentItem = this.currentGroup.toString() + 'a';
 
-    } else if (this.currentGroup == 6) {
-      this.allAnswers.push(parseInt(answers));
-      this.numericalValues = this.allAnswers.slice(1);
-      this.currentGroup += 1;
-        function add(sum, b) {
-          return sum + b;
-    };
+  } else if (this.currentGroup == 6) {
+    this.allAnswers.push(parseInt(answers));
+    this.numericalValues = this.allAnswers.slice(1);
+    this.currentGroup += 1;
+      function add(sum, b) {
+        return sum + b;
+  };
 
-    let totalPoints = this.numericalValues.reduce(add, 0);
+  let totalPoints = this.numericalValues.reduce(add, 0);
 
-    if (this.genderChoice == "random") {
-      let randomNumber: number = Math.floor(Math.random() * 2);
-      this.genderChoice = this.genderOptions[randomNumber];
-    } 
-    
-    let finalGender = this.genderChoice;
+  if (this.genderChoice == "random") {
+    let randomNumber: number = Math.floor(Math.random() * 2);
+    this.genderChoice = this.genderOptions[randomNumber];
+  } 
+  
+  let finalGender = this.genderChoice;
 
-        console.log(finalGender);  // FOR TESTING - CAN BE REMOVED
-        console.log(totalPoints);  // FOR TESTING - CAN BE REMOVED
+      console.log(finalGender);  // FOR TESTING - CAN BE REMOVED
+      console.log(totalPoints);  // FOR TESTING - CAN BE REMOVED
 
-      this.http.get("http://localhost:3000/" + finalGender + "/" + totalPoints).subscribe( response => {
-      const hero = response[0];  
-        const id = hero.marvelid;
-        this.marvelService.heroDescription = hero.description;
-        this.marvelService.getHeroes(id);
+    this.http.get("http://localhost:3000/" + finalGender + "/" + totalPoints).subscribe( response => {
+    const hero = response[0];  
+      let id = hero.marvelid; // CHANGED FROM CONST
+      this.marvelService.altid = hero.altid;
+      this.marvelService.heroDescription = hero.description;
+      this.marvelService.getHeroes(id);
 
-          console.log(response);
-    })};
-}};
+        console.log(response);
+  })};
+}
+
+};
