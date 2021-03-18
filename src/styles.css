@@ -1,14 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
 body {
-    font-family:'Times New Roman', Times, serif;
-    /* background-repeat: no-repeat; */
+    position:absolute;
+    width: 100%;
+    font-family: 'Bangers', cursive;
+    background-repeat: no-repeat;
     background-size: cover;
-    background-image: radial-gradient(circle, rgb(218, 204, 204) 10%, rgb(178, 210, 216) 100%);
+    background-image: url(../src/app/img/background2.jpg);
+    background-position: center top, -550px 100px;
+    background-attachment: fixed, fixed;
+    /* background-image: radial-gradient(circle, rgb(218, 204, 204) 10%, rgb(178, 210, 216) 100%); */
 }
 
 header {
-    font-size: 28px;
-    font-weight: bold;
-    color:  rgb(243, 245, 247);
-    background-image: linear-gradient(45deg, rgb(226, 235, 238), rgb(41, 158, 179),  rgb(226, 235, 238));
+    width: auto;
+    height: auto;
+    font-size: 23px;
+    color:  rgb(0, 119, 255);
+    -webkit-text-stroke: 1px rgb(20, 20, 20);
+    /* background-image: linear-gradient(10deg, rgb(226, 235, 238), rgb(41, 158, 179),  rgb(226, 235, 238)); */
 }
