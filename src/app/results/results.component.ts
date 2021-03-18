@@ -12,7 +12,7 @@ interface Hero {
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css']
 })
-export class ResultsComponent implements OnInit {
+export class ResultsComponent implements OnInit {git 
   constructor(public getCharacter: MarvelService) {}
 
   @Input() chosenHero: any;
