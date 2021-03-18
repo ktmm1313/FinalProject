@@ -17,6 +17,7 @@ export class MarvelService {
   heroes: Hero[] = [];
   public chosenHero: [] = [];
   heroDescription: string;
+  altid: number;
 
   constructor(private http: HttpClient) {}
 
@@ -30,6 +31,20 @@ export class MarvelService {
     }, (error) => {
       console.error(error);
     }
-    );
+    )};
+
+    getAltHero(altid:number) {
+      const requestUrl = 
+      this.url + "/characters/" + altid + "?apikey=" + this.apiKey;
+      this.http.get(requestUrl).subscribe( (response: any) => {   
+        console.log(response);
+        this.chosenHero = response.data.results;
+        console.log(this.chosenHero);
+      }, (error) => {
+        console.error(error);
+      }
+      );
   }
+
+
 }
