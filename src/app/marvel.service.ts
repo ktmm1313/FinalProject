@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { environment } from 'src/environments/environment';
+import { Pool } from 'connection';
 
-const pool = require('./connection');
+// const pool = require('./connection');
 const crypto = require('crypto-browserify');
 
 interface Hero {
@@ -18,7 +19,7 @@ interface Hero {
 export class MarvelService {
   apiKey = "d49166f47ed95b64b29bf9077ea82d9c";
   url = "https://gateway.marvel.com/v1/public";
-  privateKey = pool.privateKey;
+  privateKey = Pool.privateKey;
   ts = new Date().getTime();
   hash = crypto.createHash('md5').update(this.ts + this.privateKey + this.apiKey).digest('hex');
   heroes: Hero[] = [];
