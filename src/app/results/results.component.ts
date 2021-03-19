@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MarvelService } from '../marvel.service';
 
 interface Hero {
   id: number;
   name: string;
   image?: string;
+
 }
 
 @Component({
@@ -17,10 +18,9 @@ export class ResultsComponent implements OnInit {
   
 altid: number;
 counter: number = 0;
+heroDescription: string;
 
   constructor(public getCharacter: MarvelService, public http:HttpClient) {}
-
-  @Input() chosenHero: any;
 
   ngOnInit(): void {}
 
