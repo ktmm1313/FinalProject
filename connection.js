@@ -5,13 +5,10 @@ const { Pool } = require('pg');try {
     // When running with Heroku, dotenv doesn't need to be available.
 }
 const connectionString = process.env.DATABASE_URL;
-const privateKey = process.env.PRIVATE_KEY; //STACEY
 const pool = new Pool({
-    connectionString: connectionString, //STACEY
-    privateKey: privateKey, //STACEY
+    connectionString: connectionString,
     ssl: connectionString.includes('localhost')
         ? false
         : { rejectUnauthorized: false },
 });
-
 module.exports = pool;
