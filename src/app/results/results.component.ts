@@ -27,7 +27,8 @@ heroDescription: string;
   getNemesis(altid: number) {
     console.log(`getNemesis altid value: ` + altid);
     console.log(`button counter started at: ` + this.counter);
-      this.http.get("http://localhost:3000/" + altid).subscribe( response => {
+      this.http.get(process.env.DATABASE_URL + "/" + altid).subscribe( response => {
+        // this.http.get("http://localhost:3000/" + altid).subscribe( response => {
       let hero = response[0];  //used to be const
         let id = hero.marvelid;
         this.getCharacter.altid = hero.altid;

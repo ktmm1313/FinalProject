@@ -28,7 +28,7 @@ app.use(express.static(__dirname + "/public"));
 // run the server
 app.listen(port, () => {
   console.log(`Listening on port: ${port}.`)});
-  
+
 const routes = require('./routes.js');
 
 app.use('/', routes);
@@ -37,3 +37,4 @@ app.get("/", (req, res) => {
     res.send("Welcome to our quiz");
   });
   
+  module.exports = server; //STACEY

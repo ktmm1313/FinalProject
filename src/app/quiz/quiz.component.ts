@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MarvelService } from '../marvel.service';
+import { Server } from 'server';
 
 export interface Question {
   id: string;
@@ -92,7 +93,11 @@ gatherAnswers(answers: any) {
       console.log(finalGender);  // FOR TESTING - CAN BE REMOVED
       console.log(totalPoints);  // FOR TESTING - CAN BE REMOVED
 
-    this.http.get("http://localhost:3000/" + finalGender + "/" + totalPoints).subscribe( response => {
+      let port: string = Server.port; // STACEY
+
+    // this.http.get(port + finalGender + "/" + totalPoints).subscribe( response => {
+      this.http.get(process.env.DATABASE_URL + "/" + finalGender + "/" + totalPoints).subscribe( response => {
+      // this.http.get("http://localhost:3000/" + finalGender + "/" + totalPoints).subscribe( response => {
     const hero = response[0];  
       let id = hero.marvelid; // CHANGED FROM CONST
       this.marvelService.altid = hero.altid;
