@@ -1,6 +1,6 @@
 // define the port
 // Use Heroku's PORT or default to 3000.
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5432;
 
 // require the Express module
 const express = require("express");
