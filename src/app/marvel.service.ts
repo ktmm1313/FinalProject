@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { environment } from 'src/environments/environment';
 
 const crypto = require('crypto');
+let hash = crypto.createHash('md5');
 
 interface Hero {
   id: number;
@@ -18,7 +19,7 @@ export class MarvelService {
   apiKey = "d49166f47ed95b64b29bf9077ea82d9c";
   url = "https://gateway.marvel.com/v1/public";
   ts = new Date().getTime();
-  hash = crypto.createHash('md5').update(this.ts + environment.privateApiKey + this.apiKey).digest('hex');
+  hash = hash.update(this.ts + environment.privateApiKey + this.apiKey).digest('hex');
   heroes: Hero[] = [];
   public chosenHero: [] = [];
   heroDescription: string;
