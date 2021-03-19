@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  privateApiKey: process.env.PRIVATE_KEY,
   backendUrl: 'http://localhost:3000/'
 };
 

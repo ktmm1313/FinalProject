@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MarvelService } from '../marvel.service';
-import { environment } from 'src/environments/environment.prod'
+import { environment } from 'src/environments/environment'
 
 interface Hero {
   id: number;
