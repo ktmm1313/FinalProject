@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { environment } from 'src/environments/environment';
 
-const crypto = require('crypto');
+const crypto = require('crypto-browserify');
 let hash = crypto.createHash('md5');
 
 interface Hero {
