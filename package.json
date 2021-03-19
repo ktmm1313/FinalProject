@@ -36,6 +36,7 @@
     "@angular/compiler-cli": "~11.0.5",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.20.5",
+    "@types/server": "^1.0.3",
     "codelyzer": "^6.0.0",
     "dotenv": "^8.2.0",
     "jasmine-core": "~3.6.0",

@@ -36,5 +36,3 @@ app.use('/', routes);
 app.get("/", (req, res) => {
     res.send("Welcome to our quiz");
   });
-  
-  module.exports = server; //STACEY
