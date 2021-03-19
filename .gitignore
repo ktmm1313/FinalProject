@@ -48,4 +48,3 @@ Thumbs.db
 
 node_modules/
 .env
-connection.js
