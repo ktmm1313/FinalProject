@@ -10,14 +10,6 @@ const pool = new Pool({
     ssl: connectionString.includes('localhost')
         ? false
         : { rejectUnauthorized: false },
-});// Code snippet from Heroku that might be useful but
-// doesn't seem to be required
-// pool.connect();
-// pool.query('SELECT * FROM test;', (err, res) => {
-//   if (err) throw err;
-//   for (let row of res.rows) {
-//     console.log(JSON.stringify(row));
-//   }
-//   pool.end();
-// });
+});
+
 module.exports = pool;
