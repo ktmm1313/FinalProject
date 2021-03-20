@@ -15,7 +15,7 @@ import { ResultsComponent } from './results/results.component';
     ResultsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     FormsModule
