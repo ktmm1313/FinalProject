@@ -14,7 +14,7 @@ interface Hero {
 
 export class MarvelService {
   apiKey = "d49166f47ed95b64b29bf9077ea82d9c";
-  url = "http://gateway.marvel.com/v1/public";
+  url = "https://gateway.marvel.com/v1/public";
   heroes: Hero[] = [];
   public chosenHero: [] = [];
   heroDescription: string;
