@@ -14,7 +14,7 @@ interface Hero {
 
 export class MarvelService {
   apiKey = "d49166f47ed95b64b29bf9077ea82d9c";
-  url = "https://gateway.marvel.com/v1/public";
+  url = "http://gateway.marvel.com/v1/public";
   heroes: Hero[] = [];
   public chosenHero: [] = [];
   heroDescription: string;
@@ -29,8 +29,9 @@ export class MarvelService {
   getHeroes(id:number) {
     console.log(`the hash is: ` + this.hash);
     const requestUrl = 
-    this.url + "/characters" + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
-    // this.url + "/characters/" + id + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
+    // this.url + "/characters" + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
+    this.url + "/characters/" + id + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
+    console.log(requestUrl);
     this.http.get(requestUrl).subscribe( (response: any) => {   
       console.log(response);
       this.chosenHero = response.data.results;
