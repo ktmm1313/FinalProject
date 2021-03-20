@@ -16,7 +16,8 @@
     "serve:ssr": "node dist/FinalProject/server/main.js",
     "build:ssr": "ng build --prod && ng run FinalProject:server:production",
     "prerender": "ng run FinalProject:prerender",
-    "prebuild:ssr": "ngcc"
+    "prebuild:ssr": "ngcc",
+    "heroku-postbuild": "ng build --configuration=production"
   },
   "private": true,
   "dependencies": {
