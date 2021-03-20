@@ -17,7 +17,7 @@
     "build:ssr": "ng build --prod && ng run FinalProject:server:production",
     "prerender": "ng run FinalProject:prerender",
     "prebuild:ssr": "ngcc",
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build --aot --prod",
     "heroku-postbuild": "ng build --prod"
   },
   "private": true,
