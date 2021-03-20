@@ -43,8 +43,10 @@ app.listen(port, () => {
 
 const routes = require('./routes.js');
 
+app.options('*', cors()); // TRYING SOMETHING
+
 app.use('/', routes);
   
-app.get("/", (req, res) => {
-    res.send("Welcome to our quiz");
-  });
+// app.get("/", (req, res) => {
+//     res.send("Welcome to our quiz");
+//   });
