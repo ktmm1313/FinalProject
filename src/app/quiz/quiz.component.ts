@@ -56,7 +56,7 @@ export class QuizComponent implements OnInit {
   finalGender: string;
   altid: number;
 
-  constructor(private marvelService: MarvelService, public http: HttpClient) {} //changed marvel to private
+  constructor(public marvelService: MarvelService, public http: HttpClient) {}
   
   ngOnInit(): void {}
   
