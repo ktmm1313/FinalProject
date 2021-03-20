@@ -18,6 +18,12 @@ app.use(express.json());
 // require and use the cors module
 app.use(cors());
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://inner-superhero.herokuapp.com"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // Add express static here in order to
 // run the angular app from folder called public
 // app.use(express.static(__dirname + "/public"));
