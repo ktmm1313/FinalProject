@@ -29,7 +29,8 @@ export class MarvelService {
   getHeroes(id:number) {
     console.log(`the hash is: ` + this.hash);
     const requestUrl = 
-    this.url + "/characters/" + id + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
+    this.url + "/characters" + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
+    // this.url + "/characters/" + id + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
     this.http.get(requestUrl).subscribe( (response: any) => {   
       console.log(response);
       this.chosenHero = response.data.results;
