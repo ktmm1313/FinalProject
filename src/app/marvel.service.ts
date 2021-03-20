@@ -29,7 +29,8 @@ export class MarvelService {
 
   getHeroes(id:number) {
     console.log(`the ts is: ` + this.ts);
-    console.log(`the hash is: ` + this.hash);
+    console.log(`the hash is: ` + this.hash)
+    console.log(this.md5('1abcd1234'));
     const requestUrl = 
     // this.url + "/characters" + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
     // this.url + "/characters" + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
