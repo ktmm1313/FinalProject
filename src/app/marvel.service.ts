@@ -31,7 +31,8 @@ export class MarvelService {
     console.log(`the hash is: ` + this.hash);
     const requestUrl = 
     // this.url + "/characters" + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
-    this.url + "/characters/" + id + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
+    this.url + "/characters" + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
+    // this.url + "/characters/" + id + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
     console.log(requestUrl);
     this.http.get(requestUrl).subscribe( (response: any) => {   
       console.log(response);
