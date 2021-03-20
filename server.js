@@ -20,7 +20,8 @@ app.use(cors());
 
 // Add express static here in order to
 // run the angular app from folder called public
-app.use(express.static(__dirname + "/public"));
+// app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/dist/FinalProject/browser"));
 
 // // adding output path
 // app.use(express.static(./ + "/public"));
