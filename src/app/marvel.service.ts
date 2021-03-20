@@ -27,6 +27,7 @@ export class MarvelService {
   constructor(private http: HttpClient) {}
 
   getHeroes(id:number) {
+    console.log(`the ts is: ` + this.ts);
     console.log(`the hash is: ` + this.hash);
     const requestUrl = 
     // this.url + "/characters" + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
