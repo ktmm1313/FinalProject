@@ -22,7 +22,8 @@ export class MarvelService {
   ts = new Date().getTime();
   privateKey = process.env.PRIVATE_KEY;
   md5 = require('md5');
-  hash = this.md5((this.ts + this.privateKey + this.apiKey).toString());
+  // hash = this.md5((this.ts + this.privateKey + this.apiKey).toString());
+  hash = this.md5(this.ts + this.privateKey + this.apiKey);
 
   constructor(private http: HttpClient) {}
 
