@@ -8,13 +8,13 @@ if (environment.production) {
   enableProdMode();
 } 
 
-async function bootstrap() { //ADDED 3/20 1 PM
-  const app = await NestFactory.create(AppModule);
-  app.enableCors();
-  await app.listen(process.env.PORT || 3000);
-}
-bootstrap();
+// async function bootstrap() { //ADDED 3/20 1 PM
+//   const app = await NestFactory.create(AppModule);
+//   app.enableCors();
+//   await app.listen(process.env.PORT || 3000);
+// }
+// bootstrap();
 
 
-// platformBrowserDynamic().bootstrapModule(AppModule)
-//   .catch(err => console.error(err));
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
