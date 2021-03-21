@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
+
 interface Hero {
   id: number;
   name: string;
@@ -18,12 +19,25 @@ export class MarvelService {
   public chosenHero: [] = [];
   heroDescription: string;
   altid: number;
+  ts = new Date().getTime();
+  privateKey = process.env.PRIVATE_KEY;
+  md5 = require('md5');
+  // hash = this.md5((this.ts + this.privateKey + this.apiKey).toString());
+  hash = this.md5(this.ts + this.privateKey + this.apiKey);
 
   constructor(private http: HttpClient) {}
 
   getHeroes(id:number) {
+    console.log(`the ts is: ` + this.ts);
+    console.log(`the hash is: ` + this.hash)
+    console.log(this.md5('1abcd1234'));
     const requestUrl = 
     this.url + "/characters/" + id + "?apikey=" + this.apiKey;
+    // this.url + "/characters" + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
+    // this.url + "/characters" + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
+    // this.url + "/characters" + "&apikey=" + this.apiKey + "?ts=" + this.ts + "&hash=" + this.hash;
+    // this.url + "/characters/" + id + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
+    console.log(requestUrl);
     this.http.get(requestUrl).subscribe( (response: any) => {   
       console.log(response);
       console.log(requestUrl);
@@ -46,6 +60,5 @@ export class MarvelService {
       }
       );
   }
-
 
 }
