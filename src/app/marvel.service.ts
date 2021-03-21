@@ -26,6 +26,7 @@ export class MarvelService {
     this.url + "/characters/" + id + "?apikey=" + this.apiKey;
     this.http.get(requestUrl).subscribe( (response: any) => {   
       console.log(response);
+      console.log(requestUrl);
       this.chosenHero = response.data.results;
       console.log(this.chosenHero);
     }, (error) => {
@@ -37,7 +38,7 @@ export class MarvelService {
       const requestUrl = 
       this.url + "/characters/" + altid + "?apikey=" + this.apiKey;
       this.http.get(requestUrl).subscribe( (response: any) => {   
-        console.log(response);
+        console.log(requestUrl);
         this.chosenHero = response.data.results;
         console.log(this.chosenHero);
       }, (error) => {
