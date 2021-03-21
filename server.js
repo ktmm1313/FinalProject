@@ -43,7 +43,7 @@ app.listen(port, () => {
 
 const routes = require('./routes.js');
 
-app.options('*', cors()); // TRYING SOMETHING
+app.options('*', cors()); 
 
 app.use('/', routes);
   

@@ -1,12 +1,13 @@
 <h2>You are...</h2>
 
 <section *ngFor="let hero of getCharacter.chosenHero">
-     <p>{{hero.name}}</p>
-     <p>{{getCharacter.heroDescription}}</p>
+     <h2>{{ hero.name }}</h2>
+     <p>{{ getCharacter.heroDescription }}</p>
+     <p>{{ hero.heroDescription }}</p>
      <img src="{{hero.thumbnail.path}}/portrait_incredible.{{hero.thumbnail.extension}}" />
-     <button class="nemesis_btn" (click) = "getNemesis(getCharacter.altid)" routerLink="/results">Show Me My Nemesis</button>
+     <button class="nemesis_btn" (click) = "getNemesis(getCharacter.altid)" routerLink="/results">SHOW ME MY NEMESIS</button>
 </section>
 
 <footer>
-<p>Data provided by Marvel. © 2014 Marvel</p>
+<p>Data provided by Marvel. © 2014 Marvel. Supplemental character descriptions created with source information from Fandom and Charactour.</p>
 </footer>
