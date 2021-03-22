@@ -16,6 +16,10 @@ h2 {
     color:  rgb(27, 143, 252);
 }
 
+h3 {
+    text-decoration: underline;
+}
+
 form {
     font-family: 'Roboto', sans-serif;
     color: rgb(0, 0, 0);
@@ -27,6 +31,10 @@ form {
 
 input {
     cursor: pointer;
+}
+
+.choice {
+    width: 150px;
 }
 
 button {
