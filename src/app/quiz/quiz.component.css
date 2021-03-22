@@ -1,11 +1,11 @@
-body {
-    /* background-repeat: no-repeat;
+/* body {
+    background-repeat: no-repeat;
     background-size: cover;
     background-image: url(/background2/jpg);
     background-position: center top, -550px 100px;
-    background-attachment: fixed, fixed; */
+    background-attachment: fixed, fixed;
     background-image: radial-gradient(circle, rgb(218, 204, 204) 10%, rgb(178, 210, 216) 100%);
-}
+} */
 
 h2 {
     font-family: 'Roboto', sans-serif;

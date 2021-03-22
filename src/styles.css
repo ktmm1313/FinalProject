@@ -12,11 +12,12 @@ body {
 }
 
 header {
-    font-size: 25px;
-    color:  rgb(234, 244, 255);
-    padding: 10px;
-    text-align: center;
-    border-radius: 30px;
+    width: auto;
+    height: auto;
+    font-size: 23px;
+    /* color:  rgb(0, 119, 255); */
+    /* color:  red; */
+    color:  gold;
     -webkit-text-stroke: 1px rgb(20, 20, 20);
     background-image: url(../src/app/img/blue.jpg);
     background-repeat: no-repeat;
