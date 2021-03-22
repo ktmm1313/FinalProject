@@ -3,27 +3,20 @@ section {
 }
 
 h2 {
-    color:  gold;
+    color: #fbca03;
     -webkit-text-stroke: 1px rgb(20, 20, 20);
     font-family: 'Bangers', cursive;
     font-size: 50px;
-    padding-left: 20px;
+    margin-bottom: 0;
 }
 
 h3 {
-    color: #000000;
+    color: white;
     font-family: 'Staatliches', cursive;
     font-weight: lighter;
     font-size: 22px;
-    text-decoration: underline;
 }
 
-h4 {
-    color: #000000;
-    font-family: 'Staatliches', cursive;
-    font-weight: lighter;
-    font-size: 22px;
-}
 
 input {
     cursor: pointer;
@@ -35,11 +28,20 @@ button {
     -webkit-text-stroke: 1.5px rgb(20, 20, 20);
     font-family: 'Bangers', cursive;
     font-size: 40px;
-    padding: 20px;
+    padding: 5px;
     border-radius: 30px;
     width: 100%;
     text-align: center;
     cursor: pointer;
+    margin-top: 20px;
+}
+
+footer {
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-weight: lighter;
+    font-size: 12px;
+    padding-left: 20px;
 }
 
 /* .image {
@@ -51,9 +53,13 @@ background-color: rgb(165, 164, 164);
 }
 
 @media screen and (min-width: 768px) {
+    
+
 
 }
 
 @media screen and (min-width: 1024px) {
     
+
+
 }
