@@ -1,5 +1,8 @@
-<h2>You are...</h2>
-
+<header>
+    <h2>You are...</h2>    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+    </style> 
+</header>
 <section *ngFor="let hero of getCharacter.chosenHero">
      <h2>{{ hero.name }}</h2>
      <p>{{ getCharacter.heroDescription }}</p>
