@@ -11,7 +11,7 @@
 <div *ngIf="question.group == currentGroup"> 
       
 <form>
-<div *ngIf="currentGroup == 1;else otherGroup">
+<div class="container" *ngIf="currentGroup == 1;else otherGroup">
         
 <label>
     <img class="choice" src={{question.imageUrl}}>
@@ -20,7 +20,7 @@
 </label>
 </div> 
 
-<div>
+<div class="container">
     <ng-template #otherGroup>
 <label>
     <img class="choice" src={{question.imageUrl}}>

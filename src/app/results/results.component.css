@@ -42,15 +42,9 @@ button {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-button:hover {
-background-color: rgb(165, 164, 164);
-}
-=======
 /* .image {
     align-items: center;
 } */
->>>>>>> 3cf3ebbcfdba27e9b9d570f6cb6f214795db105a
 
 button:hover {
 background-color: rgb(165, 164, 164);

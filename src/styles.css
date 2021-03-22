@@ -1,13 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: rgb(197, 183, 183);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../src/assets/red_bkg.png);
+    background-position: center top, -550px 100px;
+    background-attachment: fixed, fixed;
     font-family: 'Bangers', cursive;
     position:absolute;
     width: 100%;
-}
+}  
 
 header {
-    color:  gold;
+    color: #FBCA03;
     -webkit-text-stroke: 1px rgb(20, 20, 20);
     font-size: 23px;
     padding-left: 20px;
