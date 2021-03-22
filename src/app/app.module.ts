@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { ResultsComponent } from './results/results.component';
+// import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ResultsComponent } from './results/results.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule
+    // FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
