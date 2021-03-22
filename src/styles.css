@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    background-color: rgb(228, 233, 255);
+}
+
 body {
     padding-left: 0px;
     position:absolute;
