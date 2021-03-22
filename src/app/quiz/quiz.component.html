@@ -25,7 +25,7 @@
 </section>
 
 <div *ngIf="currentGroup < 6; else elseBlock">
-<button class="question_btn" (click) = "gatherAnswers(answers)">Next Question</button>
+<button class="question_btn" (click) = "gatherAnswers(answers)" form="formQuestions">Next Question</button>
 </div>
 <div>
     <ng-template #elseBlock>
