@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // privateApiKey: process.env.PRIVATE_KEY, // NEW
+  backendUrl: 'http://localhost:3000/' // NEW
 };
 
 /*

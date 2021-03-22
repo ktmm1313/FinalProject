@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { MarvelService } from '../marvel.service';
 
 export interface Question {
@@ -55,7 +56,7 @@ export class QuizComponent implements OnInit {
   finalGender: string;
   altid: number;
 
-  constructor(public marvelService: MarvelService, public http:HttpClient) {}
+  constructor(public marvelService: MarvelService, public http: HttpClient) {}
   
   ngOnInit(): void {}
   
@@ -92,8 +93,9 @@ gatherAnswers(answers: any) {
       console.log(finalGender);  // FOR TESTING - CAN BE REMOVED
       console.log(totalPoints);  // FOR TESTING - CAN BE REMOVED
 
-    this.http.get("http://localhost:3000/" + finalGender + "/" + totalPoints).subscribe( response => {
-    const hero = response[0];  
+    this.http.get(environment.backendUrl + finalGender + "/" + totalPoints).subscribe( response => {
+      // this.http.get("http://localhost:3000/" + finalGender + "/" + totalPoints).subscribe( response => {
+    let hero = response[0];  
       let id = hero.marvelid; // CHANGED FROM CONST
       this.marvelService.altid = hero.altid;
       this.marvelService.heroDescription = hero.description;
