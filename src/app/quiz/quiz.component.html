@@ -1,8 +1,6 @@
 <header>
     <h1>Who's Your Inner Superhero?</h1>
-    </header>
-    
-    <section *ngFor="let question of questions;">
+    </header>    <section *ngFor="let question of questions;">
             <div *ngIf="question.id == currentItem && currentGroup <= 6">
         <h3>Question {{question.group}} of 6</h3>
         <h2>{{question.text}}</h2>
@@ -15,9 +13,7 @@
             <input class="answers" name="answers" type="radio" [(ngModel)]="answers" value="{{question.gender}}"/>
             <p>{{question.answer}}</p>
         </label>
-        </div>
-    
-        <div>
+        </div>        <div>
             <ng-template #otherGroup>
         <label>
             <img class="choice" src={{question.imageUrl}}>
@@ -25,16 +21,14 @@
             <p>{{question.answer}}</p>
         </label>
     </ng-template>
-        </div>    
+        </div>
     </form>
     </div>
-    </section>
-    
-    <div *ngIf="currentGroup < 6; else elseBlock">
+    </section>    <div *ngIf="currentGroup < 6; else elseBlock">
     <button class="question_btn" (click) = "gatherAnswers(answers)">Next Question</button>
     </div>
     <div>
         <ng-template #elseBlock>
     <button class="question_btn" (click) = "gatherAnswers(answers)" routerLink="/results">I'm Ready for My Secret Identity</button>
-        </ng-template>    
+        </ng-template>
     </div>
