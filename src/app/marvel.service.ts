@@ -22,15 +22,12 @@ export class MarvelService {
   // ts = new Date().getTime();
   // privateKey = process.env.PRIVATE_KEY;
   // md5 = require('md5');
-  // hash = this.md5((this.ts + this.privateKey + this.apiKey).toString());
+  // hash = this.md5((this.ts + this.privateKey + this.apiKey).toString()); DIDN'T WORK
   // hash = this.md5(this.ts + this.privateKey + this.apiKey);
 
   constructor(private http: HttpClient) {}
 
   getHeroes(id:number) {
-    // console.log(`the ts is: ` + this.ts);
-    // console.log(`the hash is: ` + this.hash)
-    // console.log(this.md5('1abcd1234'));
     const requestUrl = 
     this.url + "/characters/" + id + "?apikey=" + this.apiKey;
     // this.url + "/characters" + "?ts=" + this.ts + "&apikey=" + this.apiKey + "&hash=" + this.hash;
@@ -52,9 +49,7 @@ export class MarvelService {
       const requestUrl = 
       this.url + "/characters/" + altid + "?apikey=" + this.apiKey;
       this.http.get(requestUrl).subscribe( (response: any) => {   
-        console.log(requestUrl);
         this.chosenHero = response.data.results;
-        console.log(this.chosenHero);
       }, (error) => {
         console.error(error);
       }
