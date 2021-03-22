@@ -16,7 +16,9 @@ header {
     width: auto;
     height: auto;
     font-size: 23px;
-    color:  rgb(0, 119, 255);
+    /* color:  rgb(0, 119, 255); */
+    /* color:  red; */
+    color:  gold;
     -webkit-text-stroke: 1px rgb(20, 20, 20);
     /* background-image: linear-gradient(10deg, rgb(226, 235, 238), rgb(41, 158, 179),  rgb(226, 235, 238)); */
 }
