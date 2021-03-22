@@ -4,12 +4,29 @@
     </style> 
 </header>
 <section *ngFor="let hero of getCharacter.chosenHero">
-     <h2>{{ hero.name }}</h2>
-     <p>{{ getCharacter.heroDescription }}</p>
-     <p>{{ hero.heroDescription }}</p>
-     <img src="{{hero.thumbnail.path}}/portrait_incredible.{{hero.thumbnail.extension}}" />
+     <h3>{{ hero.name }}</h3>
+     <h4><p>{{ getCharacter.heroDescription }}</p></h4>
+     <h4><p>{{ hero.heroDescription }}</p></h4>
+     
+     <br>
+
+     <img class="image" src="{{hero.thumbnail.path}}/portrait_incredible.{{hero.thumbnail.extension}}" />
+     
+     <pre></pre>
+     <br>
+     <br>
+     <br>
+
      <button class="nemesis_btn" (click) = "getNemesis(getCharacter.altid)" routerLink="/results">SHOW ME MY NEMESIS</button>
+     
+     <pre></pre>
+     <br>
+     <br>
 </section>
+    
+<pre></pre>
+    <br>
+    <br>
 
 <footer>
 <p>Data provided by Marvel. © 2014 Marvel. Supplemental character descriptions created with source information from Fandom and Charactour.</p>
