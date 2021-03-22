@@ -1,21 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    padding-left: 0px;
+    background-color: rgb(197, 183, 183);
+    font-family: 'Bangers', cursive;
     position:absolute;
     width: 100%;
-    font-family: 'Bangers', cursive;
-
 }
 
 header {
-    width: auto;
-    height: auto;
-    font-size: 23px;
-    /* color:  rgb(0, 119, 255); */
-    /* color:  red; */
     color:  gold;
     -webkit-text-stroke: 1px rgb(20, 20, 20);
-    background-image: url(../src/app/img/blue.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    font-size: 23px;
+    padding-left: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(../src/app/img/background2.jpg);
+        background-position: center top, -550px 100px;
+        background-attachment: fixed, fixed;
+        font-family: 'Bangers', cursive;
+        position:absolute;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1024px) {
+    body {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(../src/app/img/background2.jpg);
+        background-position: center top, -550px 100px;
+        background-attachment: fixed, fixed;
+        font-family: 'Bangers', cursive;
+        position:absolute;
+        width: 100%;
+    }  
 }
