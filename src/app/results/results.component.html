@@ -14,15 +14,20 @@
      <h3><p>{{ hero.heroDescription }}</p></h3>
      <img class="image" src="{{hero.thumbnail.path}}/portrait_incredible.{{hero.thumbnail.extension}}" />
 
-     <div *ngIf="this.counter % 2 === 0;else elseText">
+     <div class="buttons" *ngIf="this.counter % 2 === 0;else elseText">
         <button class="nemesis_btn" (click) = "getNemesis(getCharacter.altid)" routerLink="/results">SHOW ME MY NEMESIS</button>
+        <button class="reset_btn" routerLink="/">I WANT TO TRY AGAIN</button>
      </div>
+</section>
 
      <ng-template #elseText>
+        <div class="buttons">
         <button class="nemesis_btn" (click) = "getNemesis(getCharacter.altid)" routerLink="/results">SHOW ME MY INNER-SUPERHERO</button>
+        <button class="reset_btn" routerLink="/">I WANT TO TRY AGAIN</button>
+        </div>
      </ng-template>
+
      
-</section>
 
 <footer>
 <p>Data provided by <a href="http://marvel.com" target="_blank">Marvel</a>. © 2014 Marvel. Supplemental character descriptions created with source information from Fandom and Charactour.</p>
