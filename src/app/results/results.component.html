@@ -1,15 +1,32 @@
 <header>
-    <h2>You are...</h2>
+    <div *ngIf="this.counter % 2 === 0;else elseBlock">
+        <h2>You are...</h2>
+    </div>
+
+    <ng-template #elseBlock>
+        <h2>Your nemesis is...</h2>
+    </ng-template>
 </header>
+
 <section *ngFor="let hero of getCharacter.chosenHero">
      <h2>{{ hero.name }}</h2>
      <h3><p>{{ getCharacter.heroDescription }}</p></h3>
      <h3><p>{{ hero.heroDescription }}</p></h3>
      <img class="image" src="{{hero.thumbnail.path}}/portrait_incredible.{{hero.thumbnail.extension}}" />
 
-     <button class="nemesis_btn" (click) = "getNemesis(getCharacter.altid)" routerLink="/results">SHOW ME MY NEMESIS</button>
+     <div class="buttons" *ngIf="this.counter % 2 === 0;else elseText">
+        <button class="nemesis_btn" (click) = "getNemesis(getCharacter.altid)" routerLink="/results">SHOW ME MY NEMESIS</button>
+        <button class="reset_btn" routerLink="/">I WANT TO TRY AGAIN</button>
+     </div>
 </section>
 
+     <ng-template #elseText>
+        <div class="buttons">
+        <button class="nemesis_btn" (click) = "getNemesis(getCharacter.altid)" routerLink="/results">SHOW ME MY INNER-SUPERHERO</button>
+        <button class="reset_btn" routerLink="/">I WANT TO TRY AGAIN</button>
+        </div>
+     </ng-template>
+    
 <footer>
-<p>Data provided by Marvel. © 2014 Marvel. Supplemental character descriptions created with source information from Fandom and Charactour.</p>
+<p>Data provided by <a href="http://marvel.com" target="_blank">Marvel</a>. © 2014 Marvel. Supplemental character descriptions created with source information from Fandom and Charactour.</p>
 </footer>

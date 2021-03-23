@@ -10,8 +10,8 @@
     
 <div *ngIf="question.group == currentGroup" id="formQuestions"> 
       
-<form>
-<div class="container" *ngIf="currentGroup == 1;else otherGroup">
+<form class="container">
+<div *ngIf="currentGroup == 1;else otherGroup">
         
 <label>
     <img class="choice" src={{question.imageUrl}}>

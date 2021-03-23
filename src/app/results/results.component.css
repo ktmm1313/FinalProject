@@ -17,9 +17,20 @@ h3 {
     font-size: 22px;
 }
 
+a {
+    color: white;
+    text-decoration: underline;
+}
 
 input {
     cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
 }
 
 button {
@@ -28,9 +39,9 @@ button {
     -webkit-text-stroke: 1.5px rgb(20, 20, 20);
     font-family: 'Bangers', cursive;
     font-size: 40px;
-    padding: 5px;
+    padding: 15px;
     border-radius: 30px;
-    width: 100%;
+    width: 45%;
     text-align: center;
     cursor: pointer;
     margin-top: 20px;
