@@ -9,7 +9,7 @@ export interface Question {
   group: number;
   text: string;
   answer: string;
-  points: number;
+  points?: number;
   gender?: string;
   imageUrl?: string;
 }
@@ -24,21 +24,21 @@ export interface Question {
 export class QuizComponent implements OnInit {
   
   questions : Question[] = [
-    {id: "1a", group: 1, text: "What do you consider yourself?", answer: "A female warrior", points: 1, gender: "female", imageUrl: "../assets/1a.png" },
-    {id: "1b", group: 1, text: "What do you consider yourself?", answer: "Fierce no matter what gender", points: 2, gender: "random", imageUrl: "../assets/1b.png" },
-    {id: "1c", group: 1, text: "What do you consider yourself?", answer: "A male warrior", points: 3, gender: "male", imageUrl: "../assets/1c.png" },
+    {id: "1a", group: 1, text: "What do you consider yourself?", answer: "A female warrior", gender: "female", imageUrl: "../assets/1a.png" },
+    {id: "1b", group: 1, text: "What do you consider yourself?", answer: "Fierce no matter what gender", gender: "random", imageUrl: "../assets/1b.png" },
+    {id: "1c", group: 1, text: "What do you consider yourself?", answer: "A male warrior", gender: "male", imageUrl: "../assets/1c.png" },
     {id: "2a", group: 2, text: "Would you rather?", answer: "Help someone in need", points: 1, imageUrl: "../assets/2a.png" },
-    {id: "2c", group: 2, text: "Would you rather?", answer: "Rule the world at all costs", points: 10, imageUrl: "../assets/2c.png" },
+    {id: "2c", group: 2, text: "Would you rather?", answer: "Rule the world at all costs", points: 7, imageUrl: "../assets/2c.png" },
     {id: "2b", group: 2, text: "Would you rather?", answer: "Weigh the options depending on the day", points: 5, imageUrl: "../assets/2b.png" },
-    {id: "3a", group: 3, text: "What's your go-to snack?", answer: "Popcorn", points: 1, imageUrl: "../assets/3a.png" },
-    {id: "3b", group: 3, text: "What's your go-to snack?", answer: "Apple", points: 2, imageUrl: "../assets/3b.png" },
-    {id: "3c", group: 3, text: "What's your go-to snack?", answer: "Donut", points: 10, imageUrl: "../assets/3c.png" },
-    {id: "4a", group: 4, text: "Which colors describe your vibe?", answer: "Green and blue", points: 1, imageUrl: "../assets/4a.png" },
-    {id: "4b", group: 4, text: "Which colors describe your vibe?", answer: "Red and black", points: 10, imageUrl: "../assets/4b.png" },
-    {id: "4c", group: 4, text: "Which colors describe your vibe?", answer: "Pink and purple", points: 2, imageUrl: "../assets/4c.png" },
+    {id: "3a", group: 3, text: "What's your go-to snack?", answer: "Popcorn", points: 2, imageUrl: "../assets/3a.png" },
+    {id: "3b", group: 3, text: "What's your go-to snack?", answer: "Apple", points: 1, imageUrl: "../assets/3b.png" },
+    {id: "3c", group: 3, text: "What's your go-to snack?", answer: "Donut", points: 7, imageUrl: "../assets/3c.png" },
+    {id: "4a", group: 4, text: "Which colors describe your vibe?", answer: "Green and blue", points: 2, imageUrl: "../assets/4a.png" },
+    {id: "4b", group: 4, text: "Which colors describe your vibe?", answer: "Red and black", points: 7, imageUrl: "../assets/4b.png" },
+    {id: "4c", group: 4, text: "Which colors describe your vibe?", answer: "Pink and purple", points: 1, imageUrl: "../assets/4c.png" },
     {id: "5a", group: 5, text: "What's your favorite way to get around?", answer: "Drive, duh", points: 1, imageUrl: "../assets/5a.png" },
     {id: "5b", group: 5, text: "What's your favorite way to get around?", answer: "Fly through the sky", points: 2, imageUrl: "../assets/5b.png" },
-    {id: "5c", group: 5, text: "What's your favorite way to get around?", answer: "Teleport...of course", points: 5, imageUrl: "../assets/5c.png" },
+    {id: "5c", group: 5, text: "What's your favorite way to get around?", answer: "Teleport...of course", points: 4, imageUrl: "../assets/5c.png" },
     {id: "6a", group: 6, text: "How do you feel about capes?", answer: "Love them!", points: 1, imageUrl: "../assets/6a.png" },
     {id: "6b", group: 6, text: "How do you feel about capes?", answer: "Take 'em or leave 'em", points: 2, imageUrl: "../assets/6b.png" },
     {id: "6c", group: 6, text: "How do you feel about capes?", answer: "They're the worst", points: 3, imageUrl: "../assets/6c.png" }
@@ -71,11 +71,22 @@ gatherAnswers(answers: any) {
     console.log(this.genderChoice);  // FOR TESTING - CAN BE REMOVED
   
     } else if (this.currentGroup > 1 && this.currentGroup < 6) {
-    this.allAnswers.push(parseInt(answers));
-    this.currentGroup += 1;
-    this.currentItem = this.currentGroup.toString() + 'a';
+
+        if (isNaN(answers)) {
+          answers = 1;
+        }
+
+      this.allAnswers.push(parseInt(answers));
+      this.currentGroup += 1;
+      this.currentItem = this.currentGroup.toString() + 'a';
+      console.log(this.allAnswers);
 
   } else if (this.currentGroup == 6) {
+
+    if (isNaN(answers)) {
+      answers = 1;
+    }
+    
     this.allAnswers.push(parseInt(answers));
     this.numericalValues = this.allAnswers.slice(1);
     this.currentGroup += 1;
@@ -91,6 +102,14 @@ gatherAnswers(answers: any) {
   } 
   
   let finalGender = this.genderChoice;
+
+  if (totalPoints < 5) {
+    totalPoints = 5;
+  }
+
+  if (totalPoints > 28) {
+    totalPoints = 28;
+  }
 
       console.log(finalGender);  // FOR TESTING - CAN BE REMOVED
       console.log(totalPoints);  // FOR TESTING - CAN BE REMOVED
