@@ -17,6 +17,10 @@ h3 {
     font-size: 22px;
 }
 
+a {
+    color: white;
+    text-decoration: underline;
+}
 
 input {
     cursor: pointer;

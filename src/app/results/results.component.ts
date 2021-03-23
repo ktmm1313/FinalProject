@@ -25,26 +25,6 @@ counter: number = 0;
   ngOnInit(): void {}
 
 
-  // getNemesis(altid: number) {
-  //   console.log(`getNemesis altid value: ` + altid);
-  //   console.log(`button counter started at: ` + this.counter);
-  //     // this.http.get("http://localhost:3000/" + altid).subscribe( response => { // LOCAL
-  //     this.http.get(environment.backendUrl + altid).subscribe( response => {
-  //     let hero = response[0];
-  //     let id = hero.marvelid;
-  //     this.getCharacter.altid = hero.altid;
-  //     this.getCharacter.heroDescription = hero.description;
-  //     if (this.counter % 2 === 0) {
-  //     this.getCharacter.getHeroes(altid);
-  //     } else {
-  //       this.getCharacter.getAltHero(id);
-  //     }
-  //       this.counter += 1;
-  //       console.log(`button counter just went up to: ` + this.counter);
-  //       console.log(response);
-  // })};
-
-
   getNemesis(altid: number) {
     // console.log(`getNemesis altid value: ` + altid);
     // console.log(`button counter started at: ` + this.counter);
