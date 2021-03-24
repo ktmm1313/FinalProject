@@ -8,21 +8,21 @@
         <h2>{{question.text}}</h2>
     </div>
     
-<div *ngIf="question.group == currentGroup"> 
+<div class="container" *ngIf="question.group == currentGroup"> 
       
-<form class="container">
+<form>
 <div *ngIf="currentGroup == 1;else otherGroup">
         
-<label>
+<label class="container">
     <img class="choice" src={{question.imageUrl}}>
         <input class="answers" name="answers" type="radio" [(ngModel)]="answers" value="{{question.gender}}"/>
             <p>{{question.answer}}</p>
 </label>
 </div> 
 
-<div class="container">
+<div>
     <ng-template #otherGroup>
-<label>
+<label class="container">
     <img class="choice" src={{question.imageUrl}}>
         <input class="answers" name="answers" type="radio" [(ngModel)]="answers" value="{{question.points}}"/>
             <p>{{question.answer}}</p>
@@ -32,7 +32,8 @@
 </form>
 </div>
 
-</section>    
+</section>   
+<div class="btns"> 
 <div *ngIf="currentGroup < 6; else elseBlock">
     <button class="question_btn" (click) = "gatherAnswers(answers)">Next Question</button>
 </div>
@@ -41,4 +42,5 @@
     <ng-template #elseBlock>
         <button class="question_btn" (click) = "gatherAnswers(answers)" routerLink="/results">I'm Ready for My Secret Identity</button>
     </ng-template>
+</div>
 </div>

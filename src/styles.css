@@ -1,43 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    padding: 20px 0 0 20px;
+}
+
+header {
+    margin: 0;
+}
+
 body {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(../src/assets/red_bkg.png);
     background-position: center top, -550px 100px;
     background-attachment: fixed, fixed;
-    font-family: 'Bangers', cursive;
-    position:absolute;
+    position: absolute;
     width: 100%;
+    margin: 0;
 }  
 
-header {
-    color: #FBCA03;
+h1 {
+    color: #fbca03;
+    font-family: 'Bangers', cursive;
     -webkit-text-stroke: 1px rgb(20, 20, 20);
-    font-size: 23px;
-    padding-left: 20px;
+    font-size: 40px;
+    margin: 0;
 }
 
 @media screen and (min-width: 768px) {
     body {
-        background-repeat: no-repeat;
-        background-size: cover;
         background-image: url(../src/app/img/background2.jpg);
-        background-position: center top, -550px 100px;
-        background-attachment: fixed, fixed;
-        font-family: 'Bangers', cursive;
-        position:absolute;
-        width: 100%;
     }
 }
 @media screen and (min-width: 1024px) {
     body {
-        background-repeat: no-repeat;
-        background-size: cover;
         background-image: url(../src/app/img/background2.jpg);
-        background-position: center top, -550px 100px;
-        background-attachment: fixed, fixed;
-        font-family: 'Bangers', cursive;
-        position:absolute;
-        width: 100%;
     }  
 }
