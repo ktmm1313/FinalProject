@@ -1,11 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-html {
-    padding: 20px 0 0 20px;
-}
 
-header {
+/* header {
     margin: 0;
-}
+} */
 
 body {
     background-repeat: no-repeat;
@@ -15,7 +12,7 @@ body {
     background-attachment: fixed, fixed;
     position: absolute;
     width: 100%;
-    margin: 0;
+    margin: 20px 15px;
 }  
 
 h1 {
@@ -23,12 +20,16 @@ h1 {
     font-family: 'Bangers', cursive;
     -webkit-text-stroke: 1px rgb(20, 20, 20);
     font-size: 34px;
-    margin: 0;
+    margin-top: 0;
 }
 
 @media screen and (min-width: 768px) {
     body {
         background-image: url(../src/app/img/background2.jpg);
+    }
+
+    h1 {
+        font-size: 48px;
     }
 }
 @media screen and (min-width: 1024px) {

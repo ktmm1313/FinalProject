@@ -96,7 +96,7 @@ gatherAnswers(answers: any) {
 
   let totalPoints = this.numericalValues.reduce(add, 0);
 
-  if (this.genderChoice == "random") {
+  if (this.genderChoice == "random" || this.genderChoice == undefined) {
     let randomNumber: number = Math.floor(Math.random() * 2);
     this.genderChoice = this.genderOptions[randomNumber];
   } 

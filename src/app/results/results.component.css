@@ -38,7 +38,7 @@ button {
     color: #fbca03;
     -webkit-text-stroke: 1.5px rgb(20, 20, 20);
     font-family: 'Bangers', cursive;
-    font-size: 32px;
+    font-size: 26px;
     padding: 5px;
     border-radius: 30px;
     width: 90vw;
@@ -52,7 +52,7 @@ footer {
     font-family: 'Staatliches', cursive;
     font-weight: lighter;
     font-size: 12px;
-    padding-right: 20px;
+    /* padding-right: 20px; */
 }
 
 button:hover {
