@@ -47,12 +47,12 @@ p {
     margin-top: 5px;
 }
 
-/* .btns {
+.btns {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
-} */
+}
 
 button {
   background-image: linear-gradient(
@@ -67,7 +67,7 @@ button {
   font-size: 26px;
   padding: 5px;
   border-radius: 30px;
-  width: 95%;
+  width: 75vw;
   text-align: center;
   cursor: pointer;
 }
@@ -76,7 +76,7 @@ button {
   h2 {
     color: white;
     -webkit-text-stroke: 1px rgb(0, 0, 0);
-    font-size: 36px;
+    font-size: 32px;
   }
 
   h3 {
@@ -86,19 +86,33 @@ button {
   }
 
   form {
-    color: white;
-    -webkit-text-stroke: .5px rgb(0, 0, 0);
-    font-size: 22px;
     align-items: flex-start;
-    padding-left: 175px;
+    padding-left: 65px;
+    font-size: 22px;
   }
 
   label {
-    width: 180px;
-  }
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
 
   .choice {
-    width: 150px;
+    width: 115px;
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 50vw;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -114,18 +128,21 @@ button {
       }
     
       form {
-        color: white;
-        -webkit-text-stroke: .5px rgb(0, 0, 0);
-        font-size: 22px;
+        font-size: 24px;
         align-items: flex-start;
-        padding-left: 175px;
+        padding-left: 100px;
       }
 
       label {
-        width: 180px;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 10px;
     }
     
       .choice {
-        width: 175px;
+        width: 125px;
       }
 }

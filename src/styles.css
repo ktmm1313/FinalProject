@@ -36,4 +36,8 @@ h1 {
     body {
         background-image: url(../src/app/img/background2.jpg);
     }  
+
+    h1 {
+        font-size: 72px;
+    }
 }
