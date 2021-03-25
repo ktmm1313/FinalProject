@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { response } from 'express';
 
 
 interface Hero {
@@ -19,6 +20,7 @@ export class MarvelService {
   public chosenHero: [] = [];
   heroDescription: string;
   altid: number;
+  name: string;
   // ts = new Date().getTime();
   // privateKey = process.env.PRIVATE_KEY;
   // md5 = require('md5');

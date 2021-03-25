@@ -19,6 +19,7 @@ export class ResultsComponent implements OnInit {
   
 altid: number;
 counter: number = 0;
+name: string;
 
   constructor(public getCharacter: MarvelService, public http:HttpClient) {}
 
@@ -32,6 +33,7 @@ counter: number = 0;
       let hero = response[0];
       let id = hero.marvelid;
       this.getCharacter.altid = hero.altid;
+      this.getCharacter.name = hero.name;
       this.getCharacter.heroDescription = hero.description;
       if (this.counter % 2 === 0) {
       this.getCharacter.getHeroes(altid);

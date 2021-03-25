@@ -117,8 +117,9 @@ gatherAnswers(answers: any) {
     this.http.get(environment.backendUrl + finalGender + "/" + totalPoints).subscribe( response => {
       // this.http.get("http://localhost:3000/" + finalGender + "/" + totalPoints).subscribe( response => {
     let hero = response[0];  
-      let id = hero.marvelid; // CHANGED FROM CONST
+      let id = hero.marvelid;
       this.marvelService.altid = hero.altid;
+      this.marvelService.name = hero.name;
       this.marvelService.heroDescription = hero.description;
       this.marvelService.getHeroes(id);
 
