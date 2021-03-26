@@ -68,7 +68,7 @@ gatherAnswers(answers: any) {
     this.genderChoice = this.allAnswers[0];
     this.currentGroup += 1;
     this.currentItem = this.currentGroup.toString() + 'a';
-    console.log(this.genderChoice);  // FOR TESTING - CAN BE REMOVED
+    console.log(this.genderChoice);
   
     } else if (this.currentGroup > 1 && this.currentGroup < 6) {
 
@@ -86,8 +86,9 @@ gatherAnswers(answers: any) {
     if (isNaN(answers)) {
       answers = 1;
     }
-
+ 
     this.allAnswers.push(parseInt(answers));
+    console.log(this.allAnswers);
     this.numericalValues = this.allAnswers.slice(1);
     this.currentGroup += 1;
       function add(sum, b) {
@@ -111,8 +112,8 @@ gatherAnswers(answers: any) {
     totalPoints = 28;
   }
 
-      console.log(finalGender);  // FOR TESTING - CAN BE REMOVED
-      console.log(totalPoints);  // FOR TESTING - CAN BE REMOVED
+      console.log(finalGender);  
+      console.log(totalPoints); 
 
     this.http.get(environment.backendUrl + finalGender + "/" + totalPoints).subscribe( response => {
       // this.http.get("http://localhost:3000/" + finalGender + "/" + totalPoints).subscribe( response => {

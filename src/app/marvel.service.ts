@@ -39,7 +39,7 @@ export class MarvelService {
     console.log(requestUrl);
     this.http.get(requestUrl).subscribe( (response: any) => {   
       console.log(response);
-      console.log(requestUrl);
+      // console.log(requestUrl);
       this.chosenHero = response.data.results;
       console.log(this.chosenHero);
     }, (error) => {
